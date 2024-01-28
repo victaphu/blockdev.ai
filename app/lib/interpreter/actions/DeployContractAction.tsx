@@ -80,7 +80,7 @@ const Action = ({ request }: { request: ChatHistoryType }) => {
 
   if (address !== "") {
     return <div>
-      <div className="w-8"><LoadingSpinner/></div>Successfully deployed the contract, we are now minting some tokens into your account. You'll be asked to sign another transaction. Check it out your new token at <a href={`https://testnet.bscscan.com/address/${address}`} target="blank" referrerPolicy="no-referrer">{address}</a>
+      <div className="w-8"><LoadingSpinner/></div>Successfully deployed the contract, we are now minting some tokens into your account. You will be asked to sign another transaction. Check it out your new token at <a href={`https://testnet.bscscan.com/address/${address}`} target="blank" referrerPolicy="no-referrer">{address}</a>
     </div>
   }
 
