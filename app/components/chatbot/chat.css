@@ -1,0 +1,56 @@
+/* chat.css */
+
+/* Chat container */
+.chat-history {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  max-height: 800px; /* Adjust the max height as needed */
+  overflow-y: auto;
+}
+
+/* Chat messages */
+.chat-message {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  max-width: 70%; /* Adjust the max width as needed */
+}
+
+/* Bot message style */
+.chat-message.bot {
+  background-color: #E0E0E0; /* Bot message background color */
+  color: #000; /* Bot message text color */
+  align-self: flex-start;
+}
+
+/* User message style */
+.chat-message.user {
+  background-color: #2979FF; /* User message background color */
+  color: #fff; /* User message text color */
+  align-self: flex-end;
+}
+
+/* Avatar style */
+.avatar {
+  width: 32px; /* Adjust avatar size as needed */
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Bot avatar style */
+.bot-avatar {
+  background-color: #E0E0E0; /* Bot avatar background color */
+  color: #000; /* Bot avatar text color */
+}
+
+/* User avatar style */
+.user-avatar {
+  background-color: #2979FF; /* User avatar background color */
+  color: #fff; /* User avatar text color */
+}

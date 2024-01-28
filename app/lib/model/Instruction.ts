@@ -1,0 +1,5 @@
+export enum InstructionType {
+  CONNECT_WALLET,
+  DEPLOY_CONTRACT,
+  EXECUTE_TRANSACTION
+}

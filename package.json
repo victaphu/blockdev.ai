@@ -9,19 +9,45 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@arwes/animated": "^1.0.0-alpha.23",
+    "@arwes/core": "^1.0.0-alpha.23",
+    "@arwes/design": "^1.0.0-alpha.19",
+    "@arwes/react": "^1.0.0-alpha.23",
+    "@arwes/theme": "^1.0.0-alpha.23",
+    "@emotion/css": "^11.11.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@langchain/community": "^0.0.20",
+    "@langchain/core": "^0.1.18",
+    "@langchain/openai": "^0.0.12",
+    "@mui/material": "^5.15.6",
+    "@thirdweb-dev/react": "^4.4.0",
+    "@thirdweb-dev/sdk": "^4.0.28",
+    "@vanilla-extract/css": "^1.14.0",
+    "@web3modal/wagmi1": "^4.0.0-544a28f1",
+    "arwes": "^1.0.0-alpha.23",
+    "dotenv": "^16.4.1",
+    "ethers": "^5.7.2",
+    "framer-motion": "^11.0.3",
+    "langchain": "^0.1.7",
+    "next": "14.1.0",
+    "pino-pretty": "^10.3.1",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.0"
+    "react-icons": "^5.0.1",
+    "viem": "^1.21.4",
+    "wagmi": "^1.4.13"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@vanilla-extract/next-plugin": "^2.3.3",
     "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "typescript": "^5"
   }
 }
