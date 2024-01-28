@@ -120,7 +120,7 @@ export default function ChatComponent({ chatHistory, setChatHistory }: ChatCompo
       message: "Please connect to your metamask",
       instruction: InstructionType.CONNECT_WALLET,
     }])
-  }, [isConnected, setChatHistory]);
+  }, [isConnected, setChatHistory, connectionStatus]);
 
   useEffect(() => {
     if (!isConnected) {
