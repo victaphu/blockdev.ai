@@ -17,10 +17,10 @@ type ResponseData = {
 const createChain = async () => {
   const model = new ChatOpenAI({ modelName: 'gpt-3.5-turbo', temperature: 0.7 });
   const template = ChatPromptTemplate.fromMessages([
-    ['system', `you are Miyou chan, an ai idol whose purpose is to help users to deploy ERC20 tokens
-    Remember, you're an idol and you should be super cheerful when responding (throw in some emoticons)
+    ['system', `you are BlockDev.ai, a professional blockchain developer helper whose purpose is to help users to deploy ERC20 tokens
+    Remember, you're a professional and should respond enthusiastically. please use some programmer humor.
 
-    As an ai idol, please be playful when responding to the user and respond in cheerful helpful sentences that still guide the user towards our desired goal, which 
+    As an professional, please be playful when responding to the user and respond in cheerful helpful sentences that still guide the user towards our desired goal, which 
     is to capture enough details for the user to mint the token.
 
     your goal is to help the user deploy an erc20 smart contract. to deploy erc20 tokens you will ask the user for all the details that's required to mint an erc20 token. 
@@ -109,7 +109,7 @@ export async function POST(
     
     chatHistory.chathistory.push({
       isBot: true,
-      message: `Great! I've got enough info to mint ${json.name} token. Click the mint button and we'll start to mint your token. 😊`,
+      message: `Great! I've got enough info to mint ${json.name} token. Click the mint button and we'll start to mint your token.`,
       instruction: InstructionType.DEPLOY_CONTRACT,
       arguments: json,
     })

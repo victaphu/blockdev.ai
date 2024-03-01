@@ -1,6 +1,4 @@
 import { Dispatch, KeyboardEvent, SetStateAction, useEffect, useState } from "react";
-import { Button } from "../button";
-import { TextField } from "../textfield/TextField";
 import { ChatHistoryType } from "./ChatHistory";
 import ErrorComponent from "./ErrorComponent";
 import LoadingSpinner from "./LoadingSpinner";
@@ -9,6 +7,7 @@ import { InstructionType } from "@/app/lib/model/Instruction";
 // import { bsc, bscTestnet } from 'wagmi/chains'
 import { ChatRequest } from "@/app/lib/model/ChatRequest";
 import { ChainId, useAddress, useChainId, useConnectionStatus } from "@thirdweb-dev/react";
+import { TextField } from "@mui/material";
 
 type ChatComponentProps = {
   chatHistory: ChatHistoryType[]
@@ -21,7 +20,7 @@ export default function ChatComponent({ chatHistory, setChatHistory }: ChatCompo
   const [errorMessage, setErrorMessage] = useState('');
 
   const address = useAddress();
-  
+
   // const { address, isConnected } = useAccount();
 
   const chainId = useChainId();
@@ -88,14 +87,14 @@ export default function ChatComponent({ chatHistory, setChatHistory }: ChatCompo
   const handleUserInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (isLoading) {
       return;
-    } 
+    }
     setUserInput(e.target.value);
   };
 
   const handleKeyPressed = (e: KeyboardEvent<Element>) => {
     if (isLoading) {
       return;
-    } 
+    }
     if (e.shiftKey && e.key === "Enter") {
       return;
     }
@@ -110,6 +109,9 @@ export default function ChatComponent({ chatHistory, setChatHistory }: ChatCompo
       return;
     }
     if (connectionStatus === 'unknown') {
+      return;
+    }
+    if (connectionStatus === 'connecting') {
       return;
     }
     setChatHistory([{
@@ -136,7 +138,7 @@ export default function ChatComponent({ chatHistory, setChatHistory }: ChatCompo
     }]);
   }, [isConnected, chainId])
 
-  return <div className="flex gap-4 mt-4">
+  return <div className="flex gap-2 w-full max-w-5xl items-center bg-white p-2  mx-auto pl-16">
     {errorMessage && (
       <ErrorComponent
         errorMessage={errorMessage}
@@ -151,12 +153,12 @@ export default function ChatComponent({ chatHistory, setChatHistory }: ChatCompo
       placeholder="How can I help you today?"
       value={userInput}
       onChange={handleUserInput}
-      onPress={handleKeyPressed}
-      className='flex-1 h-20'
+      className='w-full '
+      onKeyUp={handleKeyPressed}
       autoFocus={true}><></></TextField>
     <div className="my-auto">{isLoading && <LoadingSpinner />}</div>
-    <Button onClick={sendUserMessage} disabled={isLoading}>
+    <button onClick={sendUserMessage} disabled={isLoading} className="btn btn-secondary">
       Send
-    </Button>
+    </button>
   </div>
 }

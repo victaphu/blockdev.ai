@@ -65,7 +65,7 @@ import { ChatHistoryType } from "@/app/components/chatbot/ChatHistory";
 
 const Action = () => {
   return <div>
-    <ConnectWallet/>
+    <ConnectWallet className="bg-secondary text-white p-2 font-satoshi-regular"/>
   </div>
 }
 
