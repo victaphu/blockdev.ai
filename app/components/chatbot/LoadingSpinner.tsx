@@ -5,8 +5,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 const LoadingSpinner = () => {
   return (
-    <div className="loading-spinner w-full h-full">
-      <CircularProgress />
+    <div className="w-full h-full">
+      <CircularProgress className='text-secondary' />
     </div>
   );
 };

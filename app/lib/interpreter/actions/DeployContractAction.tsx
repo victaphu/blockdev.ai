@@ -67,20 +67,20 @@ const Action = ({ request }: { request: ChatHistoryType }) => {
 
   if (error !== '') {
     return <div className="text-red-600">
-      <div className="flex flex-col"><FaSquareXmark /><div className="text-ellipsis">An error occurred while minting your token. Error was {error}. You may not have enough tokens. Visit <a href="https://www.bnbchain.org/en/testnet-faucet" target="blank" referrerPolicy="no-referrer">The BNB Faucet</a> for some test tokens.</div></div>
+      <div className="flex flex-col"><FaSquareXmark /><div className="text-ellipsis">An error occurred while minting your token. Error was {error}. You may not have enough tokens. Visit <a href="https://www.bnbchain.org/en/testnet-faucet" target="blank" referrerPolicy="no-referrer" className="link">The BNB Faucet</a> for some test tokens.</div></div>
       <Button onClick={mintToken}>Retry</Button>
     </div>
   }
 
   if (success) {
     return <div>
-      <FaSquareCheck />Successfully minted your new contract. Check it out at <a href={`https://testnet.bscscan.com/address/${address}`} target="blank" referrerPolicy="no-referrer">{address}</a>
+      <FaSquareCheck />Successfully minted your new contract. Check it out at <a href={`https://testnet.bscscan.com/address/${address}`} className="link" target="blank" referrerPolicy="no-referrer">{address}</a>
     </div>
   }
 
   if (address !== "") {
     return <div>
-      <div className="w-8"><LoadingSpinner/></div>Successfully deployed the contract, we are now minting some tokens into your account. You will be asked to sign another transaction. Check it out your new token at <a href={`https://testnet.bscscan.com/address/${address}`} target="blank" referrerPolicy="no-referrer">{address}</a>
+      <div className="w-8"><LoadingSpinner/></div>Successfully deployed the contract, we are now minting some tokens into your account. You will be asked to sign another transaction. Check it out your new token at <a className="link" href={`https://testnet.bscscan.com/address/${address}`} target="blank" referrerPolicy="no-referrer">{address}</a>
     </div>
   }
 
@@ -91,7 +91,7 @@ const Action = ({ request }: { request: ChatHistoryType }) => {
   }
 
   return <div>
-    <Button disabled={deploying} onClick={mintToken}>Mint {request.arguments?.name} Token</Button>
+    <button className="btn btn-secondary" disabled={deploying} onClick={mintToken}>Mint {request.arguments?.name} Token</button>
   </div>
 }
 
